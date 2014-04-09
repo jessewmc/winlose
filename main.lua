@@ -63,6 +63,7 @@ objects = {player_sprite, ground, unpack(obstacles)}
 moveable = {player_sprite}
 collide ={player_sprite}
 str = ""
+mort = nil
 words = 0
 elapsed = 0
 start_time =  0
@@ -127,14 +128,22 @@ function love.update(dt)
 		player_sprite.velocity_y = player_sprite.velocity_y + player_sprite.accel_y * dt
 	--end]]
 
-	if love.keyboard.isDown("/") then
-		local mort = mortar.new()
+	if love.keyboard.isDown("/") and mort==nil then
+		mort = mortar.new()
 		table.insert(objects, mort)
 		table.insert(moveable, mort)
 		table.insert(collide, mort)
 	end
 
-	if love.keyboard.isDown(up) and player_sprite.grounded then
+	--make function to abstract this
+	if mort and mort.x < player_sprite.x - 150 then
+		table.remove(objects)
+		table.remove(moveable)
+		table.remove(collide)
+		mort = nil
+	end
+
+	if love.keyboard.isDown("z") and player_sprite.grounded then
 		player_sprite.velocity_y = player_sprite.jump
 		player_sprite.grounded=false
 	end
