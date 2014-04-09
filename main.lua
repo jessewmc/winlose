@@ -1,6 +1,8 @@
 --smoking rabbit rabid frog productions
 --srrf pronounced surf
 
+--bejezzuses
+
 require "vector"
 require "camera"
 require "mortar"
@@ -117,6 +119,11 @@ function love.update(dt)
 	end
 
 	collisions = check_collisions(collide, npos)
+
+	if mort and aabb_collision(player_sprite, mort) then
+		love.event.push("quit")
+	end
+
 	for o in values(moveable) do
 		o.y = o.y + o.velocity_y * dt
 		o.velocity_y = o.velocity_y + o.accel_y * dt
