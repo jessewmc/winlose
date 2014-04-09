@@ -1,5 +1,9 @@
+--smoking rabbit rabid frog productions
+--srrf pronounced surf
+
 require "vector"
 require "camera"
+require "mortar"
 
 player_sprite = {	x = 250,
 					y = 10,
@@ -123,11 +127,18 @@ function love.update(dt)
 		player_sprite.velocity_y = player_sprite.velocity_y + player_sprite.accel_y * dt
 	--end]]
 
+	if love.keyboard.isDown("/") then
+		local mort = mortar.new()
+		table.insert(objects, mort)
+		table.insert(moveable, mort)
+		table.insert(collide, mort)
+	end
+
 	if love.keyboard.isDown(up) and player_sprite.grounded then
 		player_sprite.velocity_y = player_sprite.jump
 		player_sprite.grounded=false
 	end
-	camera.setPosition(camera, player_sprite.x - 400, player_sprite.y - 300)
+	camera.setPosition(camera, player_sprite.x - 150, player_sprite.y - 300)
 end
 	
 function love.draw()
