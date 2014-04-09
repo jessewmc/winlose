@@ -116,7 +116,7 @@ function love.update(dt)
 		--os.exit()
 	end
 
-	collisions = check_collisions()
+	collisions = check_collisions(collide, npos)
 	for o in values(moveable) do
 		o.y = o.y + o.velocity_y * dt
 		o.velocity_y = o.velocity_y + o.accel_y * dt
@@ -136,7 +136,7 @@ function love.update(dt)
 	end
 
 	--make function to abstract this
-	if mort and mort.x < player_sprite.x - 150 then
+	if mort and mort.x < player_sprite.x - 1500 then
 		table.remove(objects)
 		table.remove(moveable)
 		table.remove(collide)
@@ -159,9 +159,9 @@ end
 function apply_gravity()
 end	
 
-function check_collisions()
-	for p in values(collide) do
-		for o in values(npos) do 
+function check_collisions(a,b)
+	for p in values(a) do
+		for o in values(b) do 
 			local col, vec = aabb_collision(p, o)
 			if col then
 				if min_x(vec) then
