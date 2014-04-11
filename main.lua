@@ -7,6 +7,8 @@ require "vector"
 require "camera"
 require "mortar"
 
+local defaultlevel = "./level/default.lvl"
+
 player_sprite = {	x = 250,
 					y = 10,
 					speed = 300,
@@ -34,6 +36,14 @@ obstacles = {}
 math.randomseed(os.time())
 clouds = {}
 clouds2 = {}
+
+function box(t)
+	table.insert(obstacles, t)
+end
+
+chunk = love.filesystem.load(defaultlevel)
+
+
 for i = 1, 100, 1 do
 	table.insert(clouds, { x = math.random(-100, 40000),
 				y = math.random(-100, 500),
@@ -47,11 +57,13 @@ for i = 1, 100, 1 do
 				height = math.random(50, 150),
 				color = {190, 190, 190}
 				})
+	--[[
 	table.insert(obstacles, {x = math.random(-100, 40000),
 				y = math.random(-100, 800),
 				width = math.random(50, 1000),
 				height = 50,
 				color = {255, math.random(0,255), 0}})
+]]--this stuff adds randomly generated platforms
 end
 --[[cloud1 = { x = 300,
 					y = 100,
