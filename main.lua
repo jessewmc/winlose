@@ -17,6 +17,7 @@ player_sprite = {	x = 250,
 					velocity_y = 0,
 					velocity_max = 10,
 					grounded = false,
+					double_jump = true,
 					jump = -1500,
 					color = {255, 105, 180},
 					width = 50,
@@ -74,8 +75,8 @@ end
 					color = {255, 255, 255}
 					}
 	]]	
-npos = {ground, unpack(obstacles)}
-objects = {player_sprite, ground, unpack(obstacles)}
+npos = obstacles
+objects = {player_sprite, unpack(obstacles)}
 moveable = {player_sprite}
 collide ={player_sprite}
 str = ""
@@ -167,7 +168,14 @@ function love.update(dt)
 	if love.keyboard.isDown("z") and player_sprite.grounded then
 		player_sprite.velocity_y = player_sprite.jump
 		player_sprite.grounded=false
+		player_sprite.double_jump = true
 	end
+
+	if love.keyboard.isDown("z") and player_sprite.double_jump then
+		player_sprite.velocity_y = player_sprite.jump
+		player_sprite.double_jump = false
+	end
+
 	camera.setPosition(camera, player_sprite.x - 150, player_sprite.y - 300)
 end
 	
@@ -192,6 +200,7 @@ function check_collisions(a,b)
 					p.velocity_y = 0
 					if(vec.y <= 0) then
 						p.grounded = true
+						p.double_jump = false
 					end
 				end
 				return true
