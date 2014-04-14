@@ -7,7 +7,8 @@ require "vector"
 require "camera"
 require "mortar"
 
-local defaultlevel = "./level/default.lvl"
+--this shit don't like "." as current dir
+local defaultlevel = "level/default.lvl"
 
 player_sprite = {	x = 250,
 					y = 10,
@@ -42,6 +43,7 @@ function box(t)
 end
 
 chunk = love.filesystem.load(defaultlevel)
+chunk()
 
 
 for i = 1, 100, 1 do
