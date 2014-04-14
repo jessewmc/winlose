@@ -17,7 +17,7 @@ player_sprite = {	x = 250,
 					velocity_y = 0,
 					velocity_max = 10,
 					grounded = false,
-					double_jump = true,
+					double_jump = 0,
 					jump = -1500,
 					color = {255, 105, 180},
 					width = 50,
@@ -84,6 +84,7 @@ mort = nil
 words = 0
 elapsed = 0
 start_time =  0
+double_jump_time = 0.3
 
 --to allow easy key remapping
 local right = "right"
@@ -168,12 +169,12 @@ function love.update(dt)
 	if love.keyboard.isDown("z") and player_sprite.grounded then
 		player_sprite.velocity_y = player_sprite.jump
 		player_sprite.grounded=false
-		player_sprite.double_jump = true
+		player_sprite.double_jump = love.timer.getTime()
 	end
 
-	if love.keyboard.isDown("z") and player_sprite.double_jump then
+	if love.keyboard.isDown("z") and player_sprite.double_jump>0 and love.timer.getTime()-player_sprite.double_jump>=double_jump_time then
 		player_sprite.velocity_y = player_sprite.jump
-		player_sprite.double_jump = false
+		player_sprite.double_jump = 0
 	end
 
 	camera.setPosition(camera, player_sprite.x - 150, player_sprite.y - 300)
@@ -200,7 +201,6 @@ function check_collisions(a,b)
 					p.velocity_y = 0
 					if(vec.y <= 0) then
 						p.grounded = true
-						p.double_jump = false
 					end
 				end
 				return true
