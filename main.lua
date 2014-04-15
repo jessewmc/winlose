@@ -179,7 +179,7 @@ function love.update(dt)
 		player_sprite.double_jump = 0
 	end
 
-	--camera box here
+	--camera box here, doesn't move camera if player within a box on screen
 	local y_plus_bound = 400
 	local y_minus_bound = 100
 	if (player_sprite.y - camera.y) > y_plus_bound then
@@ -211,8 +211,8 @@ function check_collisions(a,b)
 					p.y = p.y + vec.y
 					p.velocity_y = 0
 					if(vec.y <= 0) then
-						--bug with grounded, stays true when falling off platform?p.
-						grounded = true
+						--bug with grounded, stays true when falling off platform?
+						p.grounded = true
 					end
 				end
 				return true
