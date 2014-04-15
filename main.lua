@@ -19,7 +19,8 @@ player_sprite = {	x = 250,
 					--bug with grounded, stays true when falling off platform?
 					grounded = false,
 					double_jump = 0,
-					jump = -1500,
+					jump = -1400,
+					jump2 = -1250,
 					color = {255, 105, 180},
 					width = 50,
 					height = 50,
@@ -175,7 +176,7 @@ function love.update(dt)
 	end
 
 	if love.keyboard.isDown("z") and player_sprite.double_jump>0 and love.timer.getTime()-player_sprite.double_jump>=double_jump_time then
-		player_sprite.velocity_y = player_sprite.jump
+		player_sprite.velocity_y = player_sprite.jump2
 		player_sprite.double_jump = 0
 	end
 
