@@ -16,6 +16,7 @@ player_sprite = {	x = 250,
 					accel_y = 5000,
 					velocity_y = 0,
 					velocity_max = 10,
+					--bug with grounded, stays true when falling off platform?
 					grounded = false,
 					double_jump = 0,
 					jump = -1500,
@@ -117,6 +118,7 @@ function love.load()
 		--math.floor stops shaking when stationary, but not when moving
 		--love.graphics.print("FPS: " .. love.timer.getFPS(), math.floor(camera.x), math.floor(camera.y))
 	end)
+	camera.setPosition(camera, player_sprite.x - 150, player_sprite.y - 300)
 end
 
 function love.keypressed(key, isrepeat)
@@ -177,7 +179,16 @@ function love.update(dt)
 		player_sprite.double_jump = 0
 	end
 
-	camera.setPosition(camera, player_sprite.x - 150, player_sprite.y - 300)
+	--camera box here
+	local y_plus_bound = 400
+	local y_minus_bound = 100
+	if (player_sprite.y - camera.y) > y_plus_bound then
+		camera.setPosition(camera, player_sprite.x - 150, player_sprite.y - y_plus_bound)
+	elseif (player_sprite.y - camera.y) < y_minus_bound then
+		camera.setPosition(camera, player_sprite.x - 150, player_sprite.y - y_minus_bound)
+	end
+
+	camera.setPosition(camera, player_sprite.x - 150)
 end
 	
 function love.draw()
@@ -200,7 +211,8 @@ function check_collisions(a,b)
 					p.y = p.y + vec.y
 					p.velocity_y = 0
 					if(vec.y <= 0) then
-						p.grounded = true
+						--bug with grounded, stays true when falling off platform?p.
+						grounded = true
 					end
 				end
 				return true
