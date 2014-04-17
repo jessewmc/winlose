@@ -97,6 +97,7 @@ local up = "up"
 local collisions = false
 
 function love.load()
+	love.window.setMode(1280, 720)
 	start_time= os.time()
 	camera.newLayer(camera, 0.3,  function()
 		for o in values(clouds2) do
@@ -195,6 +196,8 @@ end
 function love.draw()
 	camera.draw(camera)
 	love.graphics.print("FPS: " .. love.timer.getFPS(), 0, 0)
+	love.graphics.print("x: " .. player_sprite.x, 0, 25)
+	love.graphics.print("y: " .. player_sprite.y, 0, 50)
 	love.graphics.print("elapsed: " .. elapsed, 0, 75)
 end
 
