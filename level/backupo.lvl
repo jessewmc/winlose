@@ -1,0 +1,25 @@
+--test level by jmc
+
+box{
+	x=100,
+	y=100,
+	width = 800,
+	height = 50,
+	color = {200,200,200}
+}
+
+box{
+	x = 200,
+	y = 400,
+	width = 40000,
+	height = 50,
+	color = {200,200,200}
+}
+
+box{
+	x = 1000,
+	y = 250,
+	width = 10000,
+	height = 50,
+	color = {250, 250, 0}
+}

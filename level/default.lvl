@@ -3,23 +3,389 @@
 box{
 	x=100,
 	y=100,
-	width = 800,
+	width = 2000,
 	height = 50,
 	color = {200,200,200}
 }
 
 box{
-	x = 200,
+	x = 2100,
 	y = 400,
-	width = 40000,
+	width = 7900,
 	height = 50,
 	color = {200,200,200}
 }
 
 box{
-	x = 1000,
+	x = 100,
+	y = -350,
+	width = 9900,
+	height = 50,
+	color = {200,200,200}
+
+}
+
+box{
+	x = 2100,
 	y = 250,
-	width = 10000,
+	width = 7500,
 	height = 50,
 	color = {250, 250, 0}
+}
+
+box{
+	x = 3000,
+	y = -10,
+	width = 150,
+	height = 25,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 3175,
+	y = -150,
+	width = 500,
+	height = 75,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 4000,
+	y = 200,
+	width = 300,
+	height = 200,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 4250,
+	y = 150,
+	width = 200,
+	height = 100,
+	color = {100, 250, 100}
+}
+
+box{
+	x = 4750,
+	y = -75,
+	width = 500,
+	height = 75,
+	color = {95, 100, 187}
+}
+
+-----------------------------------------------
+
+box{
+	x = 5000,
+	y = 60,
+	width = 80,
+	height = 50,
+	color = {0, 100, 400}
+}
+
+box{
+	x = 5300,
+	y = 150,
+	width = 80,
+	height = 50,
+	color = {200, 25, 150}
+}
+
+box{
+	x = 5500,
+	y = 100,
+	width = 300,
+	height = 100,
+	color = {94, 78, 100}
+}
+
+box{
+	x = 6000,
+	y = 50,
+	width = 700,
+	height = 50,
+	color = {250, 250, 0}
+}
+
+box{
+	x = 6500,
+	y = 0,
+	width = 100,
+	height = 25,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 6800,
+	y = -75,
+	width = 100,
+	height = 25,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 7250,
+	y = -50,
+	width = 300,
+	height = 75,
+	color = {300, 250, 100}
+}
+
+box{
+	x = 7300,
+	y = 90,
+	width = 400,
+	height = 75,
+	color = {0, 0, 100}
+}
+
+box{
+	x = 7320,
+	y = -200,
+	width = 150,
+	height = 35,
+	color = {0, 250, 0}
+}
+
+box{
+	x = 7800,
+	y = -100,
+	width = 150,
+	height = 300,
+	color = {50, 200, 150}
+}
+
+box{
+	x = 8000,
+	y = -80,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8150,
+	y = -150,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8450,
+	y = 80,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8600,
+	y = -150,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8650,
+	y = 100,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8700,
+	y = -200,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8800,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 9000,
+	y = 150,
+	width = 300,
+	height = 100,
+	color = {0, 100, 250}
+}
+
+box{
+	x = 9100,
+	y = -180,
+	width = 300,
+	height = 100,
+	color = {0, 100, 250}
+}
+
+box{
+	x = 9450,
+	y = 0,
+	width = 300,
+	height = 100,
+	color = {0, 100, 250}
+}
+
+----------------------------------------------------------------------------------------
+
+box{
+	x = 10000,
+	y = 200,
+	width = 400,
+	height = 75,
+	color = {100, 0, 100}
+}
+
+box{
+	x = 10700,
+	y = 50,
+	width = 300,
+	height = 50,
+	color = {100, 0, 100}
+}
+
+box{
+	x = 11200,
+	y = 150,
+	width = 500,
+	height = 75,
+	color = {100, 0, 100}
+}
+
+
+box{
+	x = 11700,
+	y = 0,
+	width = 300,
+	height = 100,
+	color = {100, 0, 100}
+}
+
+box{
+	x = 12100,
+	y = -75,
+	width = 550,
+	height = 50,
+	color = {100, 0, 100}
+}
+
+box{
+	x = 12750,
+	y = 0,
+	width = 100,
+	height = 100,
+	color = {100, 0, 100}
+}
+
+box{
+	x = 13000,
+	y = 110,
+	width = 350,
+	height = 100,
+	color = {110, 0, 100}
+}
+
+box{
+	x = 14000,
+	y = 200,
+	width = 540,
+	height = 100,
+	color = {110, 0, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
+}
+
+box{
+	x = 8300,
+	y = 0,
+	width = 50,
+	height = 100,
+	color = {0, 250, 100}
 }

@@ -141,6 +141,7 @@ function love.update(dt)
 	collisions = check_collisions(collide, npos)
 
 	if mort and aabb_collision(player_sprite, mort) then
+		--call a reset function
 		love.event.push("quit")
 	end
 
