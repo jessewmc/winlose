@@ -142,7 +142,8 @@ function love.update(dt)
 
 	if mort and aabb_collision(player_sprite, mort) then
 		--call a reset function
-		love.event.push("quit")
+		--love.event.push("quit")
+		reset()
 	end
 
 	for o in values(moveable) do
@@ -165,10 +166,7 @@ function love.update(dt)
 
 	--make function to abstract this
 	if mort and mort.x < player_sprite.x - 1500 then
-		table.remove(objects)
-		table.remove(moveable)
-		table.remove(collide)
-		mort = nil
+		remove_mort()
 	end
 
 	if love.keyboard.isDown("z") and player_sprite.grounded then
@@ -204,6 +202,27 @@ end
 
 function apply_gravity()
 end	
+
+function remove_mort()
+	table.remove(objects)
+	table.remove(moveable)
+	table.remove(collide)
+	mort = nil
+end
+
+function reset()
+	player_sprite.x = 250
+	player_sprite.y = 10
+	player_sprite.speed = 300
+	player_sprite.accel_y = 5000
+	player_sprite.velocity_y = 0
+	player_sprite.grounded = false
+	player_sprite.double_jump = 0
+	player_sprite.touching = false
+	player_sprite.velocity_x = 500
+	player_sprite.accel_x = 10
+	remove_mort()
+end
 
 function check_collisions(a,b)
 	for p in values(a) do
