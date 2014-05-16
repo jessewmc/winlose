@@ -1,5 +1,6 @@
 --smoking rabbit rabid frog productions
 --srrf pronounced surf
+--mengei transition, nomsain transition
 
 --bejezzuses
 
